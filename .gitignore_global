@@ -1,0 +1,11 @@
+.vagrant
+*.swp
+.DS_Store*
+.svn/
+META.*
+MYMETA.*
+blib/
+_build/
+*tar.gz
+.gradle
+build

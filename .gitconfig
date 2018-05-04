@@ -1,0 +1,26 @@
+[user]
+  name = bentis
+[push]
+  default = matching
+[color]
+  branch = auto
+  status = auto
+  diff = auto
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  di = diff
+  us = reset HEAD
+  lst = log -1 --abbrev-commit
+
+[color "status"]
+  added    = yellow
+  changed  = green
+  untracked = red
+[core]
+  excludesfile = ~/.gitignore_global
+  pager = less -XF
+[pull]
+  rebase = true

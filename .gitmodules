@@ -1,0 +1,24 @@
+[submodule ".vim/bundle/vim-json"]
+	path = .vim/bundle/vim-json
+	url = git@github.com:elzr/vim-json.git
+[submodule ".vim/bundle/vim-flavored-markdown"]
+	path = .vim/bundle/vim-flavored-markdown
+	url = git://github.com/jtratner/vim-flavored-markdown.git
+[submodule ".vim/bundle/puppet"]
+	path = .vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule ".vim/bundle/ansible-vim"]
+	path = .vim/bundle/ansible-vim
+	url = git@github.com:pearofducks/ansible-vim.git
+[submodule ".vim/bundle/jq.vim"]
+	path = .vim/bundle/jq.vim
+	url = git@github.com:vito-c/jq.vim.git
+[submodule ".vim/bundle/vim-material-theme"]
+	path = .vim/bundle/vim-material-theme
+	url = https://github.com/jdkanani/vim-material-theme
+[submodule ".vim/bundle/hashivim"]
+	path = .vim/bundle/hashivim
+	url = git@github.com:hashivim/vim-terraform.git
+[submodule ".vim/bundle/vim-flake8"]
+	path = .vim/bundle/vim-flake8
+	url = git@github.com:nvie/vim-flake8.git
