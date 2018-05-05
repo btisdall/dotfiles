@@ -62,10 +62,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
 
 # Based on https://github.com/creationix/nvm/issues/539#issuecomment-245791291
-alias _pre_nvm='unalias node npm yarn; nvm use'
-alias node='_pre_nvm 2>/dev/null; node $@'
-alias npm='_pre_nvm 2>/dev/null; npm $@'
-alias yarn='_pre_nvm 2>/dev/null; yarn $@'
+alias _pre_nvm='unalias node npm yarn 2>/dev/null; nvm use'
+alias node='_pre_nvm; node $@'
+alias npm='_pre_nvm; npm $@'
+alias yarn='_pre_nvm; yarn $@'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
