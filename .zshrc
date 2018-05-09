@@ -100,15 +100,20 @@ if type iterm2_tab_color >/dev/null; then
   source ${ZSH_CUSTOM}/iterm2_custom/colors.zsh
   precmd(){
     case "${AWS_PROFILE}" in
-      *prod*|*PROD*)
+      legacy|*prod*|*PROD*)
         iterm2_tab_color_reset
         _tab_red
-        title "PRODUCTION"
+        title "${AWS_PROFILE}" "${AWS_PROFILE}"
         ;;
       *share*|*SHARE*)
         iterm2_tab_color_reset
         _tab_orange
-        title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
+        title "${AWS_PROFILE}" "${AWS_PROFILE}"
+        ;;
+      *dev*|*DEV*|*stage*|*STAGE*)
+        iterm2_tab_color_reset
+        _tab_green
+        title "${AWS_PROFILE}" "${AWS_PROFILE}"
         ;;
       *)
         iterm2_tab_color_reset
