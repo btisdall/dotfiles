@@ -46,7 +46,7 @@ DISABLE_AUTO_TITLE="true"
 ZSH_CUSTOM=~/src/dotfiles/zsh
 
 export GOPATH=$HOME/local/go
-export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -62,10 +62,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
 
 # Based on https://github.com/creationix/nvm/issues/539#issuecomment-245791291
-alias _pre_nvm='unalias node npm yarn 2>/dev/null; nvm use'
+alias _pre_nvm='unalias node npm yarn sls 2>/dev/null; nvm use'
 alias node='_pre_nvm; node $@'
 alias npm='_pre_nvm; npm $@'
 alias yarn='_pre_nvm; yarn $@'
+alias sls='_pre_nvm; sls $@'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -96,24 +97,26 @@ set -o shwordsplit
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+_title(){
+    local colour="$1"
+    LABEL="${AWS_PROFILE}${AWS_DEFAULT_REGION:+:${AWS_DEFAULT_REGION}}"
+    iterm2_tab_color_reset
+    "_tab_${colour}"
+    title "${LABEL}" "${LABEL}"
+}
+
 if type iterm2_tab_color >/dev/null; then
   source ${ZSH_CUSTOM}/iterm2_custom/colors.zsh
   precmd(){
     case "${AWS_PROFILE}" in
-      legacy|*prod*|*PROD*)
-        iterm2_tab_color_reset
-        _tab_red
-        title "${AWS_PROFILE}" "${AWS_PROFILE}"
+      legacy|*prod*)
+        _title red
         ;;
-      *share*|*SHARE*)
-        iterm2_tab_color_reset
-        _tab_orange
-        title "${AWS_PROFILE}" "${AWS_PROFILE}"
+      *jump*|*share*)
+        _title orange
         ;;
-      *dev*|*DEV*|*stage*|*STAGE*)
-        iterm2_tab_color_reset
-        _tab_green
-        title "${AWS_PROFILE}" "${AWS_PROFILE}"
+      *dev*|*stage*)
+        _title green
         ;;
       *)
         iterm2_tab_color_reset

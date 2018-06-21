@@ -5,3 +5,6 @@ ec2di() { ec2-instances $1 | jq ec2i; }
 tiiasg(){ aws autoscaling terminate-instance-in-auto-scaling-group --no-should-decrement-desired-capacity --instance-id "$1"; }
 desc(){ aws ec2 describe-instances --instance-ids "$1" | jq 'ec2i'; }
 inst(){ ec2di | jq "fuzztag([\"$1\"]) | ec2p"; }
+inst () {
+	AWS_PROFILE=legacy desc $1 | jq 'ec2p'
+}
