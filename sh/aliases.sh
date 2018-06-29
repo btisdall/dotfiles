@@ -13,6 +13,7 @@ if [[ "${USER}" == "${WORK_USER}" ]]; then
   alias sudo='sudo -A'
 fi
 
+alias co='code . -r'
 # Git - always
 alias gs='git status'
 alias gsh='git show HEAD'
