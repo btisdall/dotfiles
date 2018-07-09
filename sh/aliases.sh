@@ -13,11 +13,21 @@ if [[ "${USER}" == "${WORK_USER}" ]]; then
   alias sudo='sudo -A'
 fi
 
+# Jira
+
+alias jm='jira mine'
+alias jmc='jira mine-created'
+alias jmb='jira mkbranch'
+
+# VS Code
 alias co='code . -r'
+
 # Git - always
 alias gs='git status'
 alias gsh='git show HEAD'
 alias gl='git log'
+alias gcmp='gcm && ggpull'
+alias grbom='gfa && git rebase origin/master'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then

@@ -3,7 +3,7 @@ def ec2i: .Reservations[].Instances[]|.Tags//=[];
 def fuzztag(x): select(.Tags[]|(.Key==(x[1]//"Name")) and (.Value|test(x[0];"i")));
 
 def ec2p: {
-  name: (.Tags[]|select(.Key=="Name")).Value,
+  name: (.Tags|from_entries["Name"]//""),
   id: .InstanceId,
   ippriv: .PrivateIpAddress,
   sshpriv: "ssh://ec2-user@\(.PrivateIpAddress)",
