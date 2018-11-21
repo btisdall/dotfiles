@@ -9,10 +9,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias ejramdisk='diskutil eject RAMDISK'
 fi
 
-if [[ "${USER}" == "${WORK_USER}" ]]; then
-  alias sudo='sudo -A'
-fi
-
 # Jira
 
 alias jm='jira mine'
@@ -28,6 +24,7 @@ alias gsh='git show HEAD'
 alias gl='git log'
 alias gcmp='gcm && ggpull'
 alias grbom='gfa && git rebase origin/master'
+alias gbdd='git br -D'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then

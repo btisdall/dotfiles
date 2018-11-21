@@ -5,7 +5,6 @@ export HISTCONTROL='ignorespace'
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 export LANG=en_GB.UTF-8
-export SUDO_ASKPASS=~/local/bin/lpass-sudo
 export EDITOR=vim
 [ -f /usr/libexec/java_home ] && export JAVA_HOME="$(/usr/libexec/java_home)"
 # Load non-verson-controlled stuff
