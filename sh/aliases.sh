@@ -9,8 +9,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias ejramdisk='diskutil eject RAMDISK'
 fi
 
-# Jira
+# jq
+alias ec2p='jq ec2p'
 
+# Jira
 alias jm='jira mine'
 alias jmc='jira mine-created'
 alias jmb='jira mkbranch'
