@@ -1,5 +1,6 @@
 [user]
   name = bentis
+  email = ben@tisdall.org.uk
 [push]
   default = matching
 [color]
