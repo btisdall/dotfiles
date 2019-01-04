@@ -1,4 +1,5 @@
 if [[ "$(uname -s)" == "Darwin" ]]; then
+  alias o='open .'
   alias cp='\gcp'
   alias ls='\gls'
   alias readlink='\greadlink'
