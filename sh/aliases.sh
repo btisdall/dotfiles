@@ -59,7 +59,7 @@ alias la='ls -a --color'
 alias ll='ls --color=auto -l'
 
 # Misc
-alias installeslint="yarn add --dev \$(npm info eslint-config-airbnb@latest peerDependencies --json|jq '[to_entries[]|[.key,.value]|join(\"@\")]|join(\" \")' -r) eslint-config-airbnb@latest"
+alias mt='d=$(mktemp -d delete-me-$(date +%Y%m%d-%H%M%S)); cd $d && git init'
 alias bu='brew upgrade && brew cleanup'
 alias diff='colordiff'
 alias vjson="vim -c 'set ft=json' -"
