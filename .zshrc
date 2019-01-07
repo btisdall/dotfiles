@@ -46,7 +46,10 @@ DISABLE_AUTO_TITLE="true"
 ZSH_CUSTOM=~/src/dotfiles/zsh
 
 export GOPATH=$HOME/local/go
-export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$HOME/miniconda3/bin
+export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+. ~/miniconda3/etc/profile.d/conda.sh
+conda activate
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
