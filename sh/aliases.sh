@@ -20,6 +20,7 @@ alias jmb='jira mkbranch'
 
 # VS Code
 alias co='code . -r'
+alias ch='charm .'
 
 # Git - always
 alias gs='git status'
