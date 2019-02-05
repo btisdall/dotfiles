@@ -115,7 +115,7 @@ if type iterm2_tab_color >/dev/null; then
       legacy|*prod*)
         _title red
         ;;
-      *jump*|*share*)
+      *jump*|*share*|jrd)
         _title orange
         ;;
       *dev*|*stage*)
