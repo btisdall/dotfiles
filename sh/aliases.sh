@@ -61,7 +61,7 @@ alias ll='ls --color=auto -l'
 
 # Misc
 alias mt='d=$(mktemp -d ~/me/delete-me-$(date +%FT%T)); cd $d && git init'
-alias bu='brew upgrade && brew cleanup'
+alias bu='brew upgrade'
 alias diff='colordiff'
 alias vjson="vim -c 'set ft=json' -"
 alias c='clear'
