@@ -5,6 +5,7 @@ def fuzztag(x): select(.Tags[]|(.Key==(x[1]//"Name")) and (.Value|test(x[0];"i")
 def ec2p: {
   name: (.Tags|from_entries["Name"]//""),
   id: .InstanceId,
+  image: .ImageId,
   ippriv: .PrivateIpAddress,
   sshpriv: "ssh://ec2-user@\(.PrivateIpAddress)",
   ippub: .PublicIpAddress,
