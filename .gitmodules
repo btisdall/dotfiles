@@ -22,3 +22,9 @@
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = git@github.com:nvie/vim-flake8.git
+[submodule ".vim/pack/bundle/start/vim-surround"]
+	path = .vim/pack/bundle/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule ".vim/pack/bundle/start/syntastic"]
+	path = .vim/pack/bundle/start/syntastic
+	url = git@github.com:vim-syntastic/syntastic.git
