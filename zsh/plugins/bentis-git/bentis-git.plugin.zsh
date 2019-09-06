@@ -6,7 +6,7 @@ function git_prompt_info() {
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
     url="$(command git remote show origin -n|grep Fetch)"
-    if echo "${url}" | grep -Eq https?://; then
+    if grep -Eq 'https?://' <<<"${url}"; then
       repo="$(echo ${url}|awk -F/ '{print $(NF-1)"/"$NF}')"
     else
       repo="$(echo ${url}|awk -F: '{print $NF}')"
