@@ -1,3 +1,4 @@
+# shellcheck disable=SC2039
 if [[ "$(uname -s)" == "Darwin" ]]; then
   alias o='open .'
   alias cp='\gcp'
@@ -19,7 +20,7 @@ alias jmc='jira mine-created'
 alias jmb='jira mkbranch'
 
 # VS Code
-alias co='code . -r'
+alias co='nvm use && code . -r'
 alias ch='charm .'
 
 # Git - always
@@ -29,6 +30,7 @@ alias gl='git log'
 alias gcmp='gcm && ggpull'
 alias grbom='gfa && git rebase origin/master'
 alias gbdd='git br -D'
+alias ggg='git clone --recurse-submodules $(pbpaste)'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then
@@ -67,6 +69,7 @@ alias vjson="vim -c 'set ft=json' -"
 alias c='clear'
 alias jks='bundle exec jekyll serve'
 alias gr='get_iplayer --type radio'
+# shellcheck disable=SC2142
 alias gw='netstat -rn -f inet|grep default|awk "{print \$2}"'
 alias jv='json_verify <'
 alias ping='ping -c10 -i1'
@@ -77,4 +80,5 @@ alias sjl='ssh ${HOME_SERVER_INTERNAL}'
 alias vy='ruby -rpp -ryaml -e "pp YAML.load(ARGF.read)"'
 alias j2y="ruby -rjson -ryaml -e 'print JSON.parse(ARGF.read).to_yaml indentation:2'"
 
+# shellcheck source=/dev/null
 [ -f ~/.aliases_local ] && . ~/.aliases_local

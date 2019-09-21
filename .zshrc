@@ -43,10 +43,15 @@ DISABLE_AUTO_TITLE="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/src/dotfiles/zsh
+DOTFILES_HOME="${HOME}/src/dotfiles"
+ZSH_CUSTOM="${DOTFILES_HOME}/zsh/omz-custom"
 
 export GOPATH=$HOME/local/go
 export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+for i in ${DOTFILES_HOME}/zsh/preload/*; do
+  [[ -f "${i}" ]] && . "${i}"
+done
 
 . ~/miniconda3/etc/profile.d/conda.sh
 conda activate
@@ -55,21 +60,13 @@ conda activate
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bentis-git iterm2 virtualenvwrapper)
+plugins=(git bentis-git iterm2 nvm virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
-
-# Based on https://github.com/creationix/nvm/issues/539#issuecomment-245791291
-alias _pre_nvm='unalias node npm yarn sls 2>/dev/null; nvm use'
-alias node='_pre_nvm; node $@'
-alias npm='_pre_nvm; npm $@'
-alias yarn='_pre_nvm; yarn $@'
-alias sls='_pre_nvm; sls $@'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -109,7 +106,7 @@ _title(){
 }
 
 if type iterm2_tab_color >/dev/null; then
-  source ${ZSH_CUSTOM}/iterm2_custom/colors.zsh
+  source ${ZSH_CUSTOM}/iterm2-custom/colors.zsh
   precmd(){
     case "${AWS_PROFILE}" in
       legacy|*prod*)
@@ -131,10 +128,6 @@ fi
 
 disable -r time
 
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/tisdabe/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tisdabe/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/tisdabe/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tisdabe/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/tisdabe/.sdkman"
+[[ -s "/Users/tisdabe/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tisdabe/.sdkman/bin/sdkman-init.sh"

@@ -18,6 +18,15 @@ set backspace=indent,eol,start
 set modeline
 set modelines=5
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
 " Turn off vim-json's quote concealment
 let g:vim_json_syntax_conceal = 0
 

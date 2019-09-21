@@ -8,6 +8,3 @@ export LANG=en_GB.UTF-8
 export EDITOR=vim
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 [ -f /usr/libexec/java_home ] && export JAVA_HOME="$(/usr/libexec/java_home)"
-# Load non-verson-controlled stuff
-[ -f ~/.work_vars ] && . ~/.work_vars
-[ -f ~/.my_vars ] && . ~/.my_vars
