@@ -42,6 +42,8 @@ DISABLE_AUTO_TITLE="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
+DISABLE_MAGIC_FUNCTIONS=true
+
 # Would you like to use another custom folder than $ZSH/custom?
 DOTFILES_HOME="${HOME}/src/dotfiles"
 ZSH_CUSTOM="${DOTFILES_HOME}/zsh/omz-custom"
@@ -53,14 +55,11 @@ for i in ${DOTFILES_HOME}/zsh/preload/*; do
   [[ -f "${i}" ]] && . "${i}"
 done
 
-. ~/miniconda3/etc/profile.d/conda.sh
-conda activate
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bentis-git iterm2 nvm virtualenvwrapper)
+plugins=(git bentis-git iterm2 nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,7 +126,3 @@ if type iterm2_tab_color >/dev/null; then
 fi
 
 disable -r time
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/tisdabe/.sdkman"
-[[ -s "/Users/tisdabe/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tisdabe/.sdkman/bin/sdkman-init.sh"

@@ -1,7 +1,7 @@
 # shellcheck disable=SC2039
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  alias o='open .'
-  alias cp='\gcp'
+alias o='open .'
+alias cp='\gcp'
   alias ls='\gls'
   alias readlink='\greadlink'
   alias md5sum='\gmd5sum'
@@ -20,7 +20,7 @@ alias jmc='jira mine-created'
 alias jmb='jira mkbranch'
 
 # VS Code
-alias co='nvm use && code . -r'
+alias co='code . -r'
 alias ch='charm .'
 
 # Git - always
