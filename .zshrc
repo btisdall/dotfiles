@@ -1,3 +1,7 @@
+__source() {
+  [[ -f "$1" ]] && . "$1"
+}
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -51,11 +55,9 @@ ZSH_CUSTOM="${DOTFILES_HOME}/zsh/omz-custom"
 export GOPATH=$HOME/local/go
 export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-for i in ${DOTFILES_HOME}/zsh/preload/*; do
-  [[ -f "${i}" ]] && . "${i}"
+for i in ${DOTFILES_HOME}/zsh/preload/* ; do
+  __source "$i"
 done
-
-complete -C aws_completer aws
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -64,6 +66,8 @@ complete -C aws_completer aws
 plugins=(git bentis-git iterm2 nvm kubectl)
 
 source $ZSH/oh-my-zsh.sh
+
+__source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
 # User configuration
 
