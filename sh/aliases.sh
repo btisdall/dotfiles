@@ -1,7 +1,7 @@
 # shellcheck disable=SC2039
 if [[ "$(uname -s)" == "Darwin" ]]; then
-alias o='open .'
-alias cp='\gcp'
+  alias o='open .'
+  alias cp='\gcp'
   alias ls='\gls'
   alias readlink='\greadlink'
   alias md5sum='\gmd5sum'
@@ -9,6 +9,7 @@ alias cp='\gcp'
   alias sed='\gsed'
   alias mkramdisk='diskutil erasevolume HFS+ RAMDISK $(hdiutil attach -nomount ram://524288) && cd /Volumes/RAMDISK'
   alias ejramdisk='diskutil eject RAMDISK'
+  alias rsync='/usr/local/opt/rsync/bin/rsync'
 fi
 
 # jq
