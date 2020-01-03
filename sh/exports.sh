@@ -8,4 +8,5 @@ export LANG=en_GB.UTF-8
 export EDITOR=vim
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=/Users/bentis/.local/share/virtualenvs
+export CVSIGNORE="._* .Spotlight* .DS_Store .fseventsd"
 [ -f /usr/libexec/java_home ] && export JAVA_HOME="$(/usr/libexec/java_home)"
