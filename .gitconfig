@@ -1,6 +1,5 @@
-[user]
-  name = bentis
-  email = ben@tisdall.org.uk
+[include]
+  path = ~/.git-local
 [push]
   default = matching
 [color]

@@ -21,7 +21,7 @@ alias jmc='jira mine-created'
 alias jmb='jira mkbranch'
 
 # VS Code
-alias co='code . -r'
+alias co='code .'
 alias ch='charm .'
 
 # Git - always
@@ -63,6 +63,7 @@ alias la='ls -a --color'
 alias ll='ls --color=auto -l'
 
 # Misc
+alias cv='asdf current'
 alias mt='d=$(mktemp -d ~/me/delete-me-$(date +%FT%T)); cd $d && git init'
 alias bu='brew upgrade'
 alias diff='colordiff'

@@ -63,7 +63,7 @@ done
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bentis-git iterm2 nvm kubectl)
+plugins=(git bentis-git iterm2 docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,13 +114,13 @@ if type iterm2_tab_color >/dev/null; then
   source ${ZSH_CUSTOM}/iterm2-custom/colors.zsh
   precmd(){
     case "${AWS_PROFILE}" in
-      legacy|*prod*)
+      core|live|legacy|*prod*)
         _title red
         ;;
-      *jump*|*share*|jrd)
+      prelive|*jump*|*share*|jrd)
         _title orange
         ;;
-      *dev*|*stage*)
+      sandbox|playground|*dev*|*stage*)
         _title green
         ;;
       *)
@@ -132,3 +132,5 @@ if type iterm2_tab_color >/dev/null; then
 fi
 
 disable -r time
+
+. /usr/local/opt/asdf/asdf.sh
