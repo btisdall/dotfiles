@@ -8,4 +8,4 @@ inst(){ ec2di | jq "fuzztag([\"$1\"]) | ec2p"; }
 inst () {
 	desc $1 | jq 'ec2p'
 }
-lpgrep(){ lpass export |csvprintf '%1$s %2$s %3$s\n' |grep -i "$1"; }
+lower(){ tr '[:upper:]' '[:lower:]'; }
