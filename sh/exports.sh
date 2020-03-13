@@ -11,3 +11,4 @@ export WORKON_HOME=/Users/bentis/.local/share/virtualenvs
 export CVSIGNORE="._* .Spotlight* .DS_Store .fseventsd"
 export WORKON_HOME=~/.local/share/virtualenvs
 [ -f /usr/libexec/java_home ] && export JAVA_HOME="$(/usr/libexec/java_home)"
+export KUBECTL_SUDO_PROMPT=true

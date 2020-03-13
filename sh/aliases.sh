@@ -12,6 +12,8 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias rsync='/usr/local/opt/rsync/bin/rsync'
 fi
 
+alias ks='kubectl sudo'
+
 # jq
 alias ec2p='jq ec2p'
 

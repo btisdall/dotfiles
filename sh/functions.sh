@@ -9,3 +9,10 @@ inst () {
 	desc $1 | jq 'ec2p'
 }
 lower(){ tr '[:upper:]' '[:lower:]'; }
+kn(){
+  if [[ -z "$1" ]]; then
+    echo "Must supply namespace"
+    return 1
+  fi
+  export KUBE_NAMESPACE="$1"
+}

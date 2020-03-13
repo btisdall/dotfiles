@@ -52,8 +52,8 @@ DISABLE_MAGIC_FUNCTIONS=true
 DOTFILES_HOME="${HOME}/src/dotfiles"
 ZSH_CUSTOM="${DOTFILES_HOME}/zsh/omz-custom"
 
-export GOPATH=$HOME/local/go
-export PATH=$HOME/local/bin:$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export GOPATH=${HOME}/go
+export PATH=${HOME}/local/bin:${GOPATH}/bin:/usr/local/bin:/usr/local/sbin:${PATH}:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 for i in ${DOTFILES_HOME}/zsh/preload/* ; do
   __source "$i"
@@ -71,7 +71,7 @@ __source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
 # User configuration
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="${HOME}/.nvm"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

@@ -9,3 +9,4 @@ _build/
 *tar.gz
 .gradle
 build
+.mypy_cache/
