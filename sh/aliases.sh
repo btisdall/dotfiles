@@ -28,6 +28,7 @@ alias ch='charm .'
 
 # Git - always
 alias gs='git status'
+alias gpo='git remote prune origin'
 alias gsh='git show HEAD'
 alias gl='git log'
 alias gcmp='gcm && ggpull'
