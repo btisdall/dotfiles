@@ -34,7 +34,6 @@ alias gl='git log'
 alias gcmp='gcm && ggpull'
 alias grbom='gfa && git rebase origin/master'
 alias gbdd='git br -D'
-alias ggg='git clone --recurse-submodules $(pbpaste)'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then
