@@ -40,6 +40,7 @@ augroup default
   au BufNewFile,BufRead *.kt,*.kts setlocal filetype=java
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
   au BufNewFile,BufRead *.params, setlocal filetype=json
+  au BufNewFile,BufRead Jenkinsfile*, setlocal filetype=groovy
 augroup END
 
 if has("autocmd")
@@ -69,5 +70,5 @@ if (empty($TMUX))
   endif
 endif
 
-colors material-theme
+colors badwolf
 hi SpellBad cterm=underline

@@ -28,3 +28,6 @@
 [submodule ".vim/pack/bundle/start/syntastic"]
 	path = .vim/pack/bundle/start/syntastic
 	url = git@github.com:vim-syntastic/syntastic.git
+[submodule ".vim/bundle/badwolf"]
+	path = .vim/bundle/badwolf
+	url = git@github.com:sjl/badwolf.git
