@@ -68,7 +68,7 @@ alias ll='ls --color=auto -l'
 alias cv='asdf current'
 alias mt='d=$(mktemp -d ~/me/delete-me-$(date +%FT%T)); cd $d && git init'
 alias bu='brew upgrade'
-alias diff='colordiff'
+alias diff='colordiff -u'
 alias vjson="vim -c 'set ft=json' -"
 alias c='clear'
 alias jks='bundle exec jekyll serve'
