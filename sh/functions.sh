@@ -13,5 +13,5 @@ kn(){ export KUBE_NAMESPACE="${1:-default}"; }
 knd(){ unset KUBE_NAMESPACE; }
 ggg(){
   git clone --recurse-submodules "$(pbpaste)"
-  cd "$(pbpaste|awk -F/ '{gsub(".git",""); print $NF}')"
+  cd "$(pbpaste|awk -F/ '{gsub("\.git$",""); print $NF}')"
 }
