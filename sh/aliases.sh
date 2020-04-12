@@ -9,7 +9,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias sed='\gsed'
   alias mkramdisk='diskutil erasevolume HFS+ RAMDISK $(hdiutil attach -nomount ram://524288) && cd /Volumes/RAMDISK'
   alias ejramdisk='diskutil eject RAMDISK'
-  alias rsync='/usr/local/opt/rsync/bin/rsync'
 fi
 
 alias ks='kubectl sudo'
