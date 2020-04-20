@@ -12,3 +12,4 @@ export CVSIGNORE="._* .Spotlight* .DS_Store .fseventsd"
 export WORKON_HOME=~/.local/share/virtualenvs
 export KUBECTL_SUDO_PROMPT=true
 export AWS_PAGER=
+export BAT_PAGER=
