@@ -4,7 +4,6 @@ export QUOTING_STYLE=literal
 export HISTCONTROL='ignorespace'
 export HISTSIZE=5000
 export HISTFILESIZE=10000
-export LANG=en_GB.UTF-8
 export EDITOR=vim
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=/Users/bentis/.local/share/virtualenvs

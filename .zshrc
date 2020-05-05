@@ -133,4 +133,8 @@ fi
 
 disable -r time
 
-. /usr/local/opt/asdf/asdf.sh
+. ~/.asdf/asdf.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/benjamin.tisdall/.sdkman"
+[[ -s "/Users/benjamin.tisdall/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/benjamin.tisdall/.sdkman/bin/sdkman-init.sh"
