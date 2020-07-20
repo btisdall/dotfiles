@@ -77,6 +77,7 @@ export NVM_DIR="${HOME}/.nvm"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 set -o shwordsplit
 
@@ -130,6 +131,8 @@ if type iterm2_tab_color >/dev/null; then
     esac
 }
 fi
+
+. /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 disable -r time
 
