@@ -48,14 +48,12 @@ DISABLE_AUTO_TITLE="true"
 
 DISABLE_MAGIC_FUNCTIONS=true
 
-# Would you like to use another custom folder than $ZSH/custom?
-DOTFILES_HOME="${HOME}/src/dotfiles"
-ZSH_CUSTOM="${DOTFILES_HOME}/zsh/omz-custom"
+ZSH_CUSTOM="${HOME}/.zsh/omz-custom"
 
 export GOPATH=${HOME}/go
 export PATH=${HOME}/local/bin:${GOPATH}/bin:/usr/local/bin:/usr/local/sbin:${PATH}:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-for i in ${DOTFILES_HOME}/zsh/preload/* ; do
+for i in "${HOME}/.zsh/preload/"* ; do
   __source "$i"
 done
 
