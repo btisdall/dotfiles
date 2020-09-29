@@ -52,8 +52,8 @@ fi
 # Docker
 alias di='docker images'
 alias dp='docker ps'
-alias dra='docker rm -f $(docker ps -a -q)'
-alias dri='docker rmi -f $(docker images -q -a -f dangling=true)'
+alias ddu='docker-compose up -d'
+alias ddv='docker-compose down -v'
 
 # Ruby
 alias pry='docker pull quay.io/btisdall/docker-pry && docker run --rm -ti quay.io/btisdall/docker-pry'

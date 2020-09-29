@@ -61,7 +61,7 @@ done
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bentis-git iterm2 docker kubectl)
+plugins=(git bentis-git iterm2 docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,7 +69,6 @@ __source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
 # User configuration
 
-export NVM_DIR="${HOME}/.nvm"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -134,8 +133,6 @@ fi
 
 disable -r time
 
-. ~/.asdf/asdf.sh
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/benjamin.tisdall/.sdkman"
-[[ -s "/Users/benjamin.tisdall/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/benjamin.tisdall/.sdkman/bin/sdkman-init.sh"
