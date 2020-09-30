@@ -52,7 +52,7 @@ fi
 # Docker
 alias di='docker images'
 alias dp='docker ps'
-alias ddu='docker-compose up -d'
+alias dcu='docker-compose up -d'
 alias ddv='docker-compose down -v'
 
 # Ruby
