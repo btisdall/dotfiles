@@ -15,3 +15,6 @@ ggg(){
   git clone --recurse-submodules "$(pbpaste)"
   cd "$(pbpaste|awk -F/ '{gsub("\.git$",""); print $NF}')"
 }
+
+ssm_get(){ aws ssm get-parameter --name "$1" --with-decryption --output text --query Parameter.Value; }
+ssm_ls(){ aws ssm get-parameters-by-path --path "$1" --recursive | jq '.Parameters[].Name' -r; }
