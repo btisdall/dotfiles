@@ -18,3 +18,5 @@ ggg(){
 
 ssm_get(){ aws ssm get-parameter --name "$1" --with-decryption --output text --query Parameter.Value; }
 ssm_ls(){ aws ssm get-parameters-by-path --path "$1" --recursive | jq '.Parameters[].Name' -r; }
+
+psqll(){ psql "postgres://postgres:postgres@localhost:${1:-5432}/postgres"; }
