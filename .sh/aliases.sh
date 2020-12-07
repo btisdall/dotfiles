@@ -11,6 +11,11 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias ejramdisk='diskutil eject RAMDISK'
 fi
 
+# npm
+
+alias ndbm='npm run db-migrate'
+alias ntq='npm run test-quick -- --watch'
+
 alias ks='kubectl sudo'
 
 # jq
