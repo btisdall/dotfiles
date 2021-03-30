@@ -20,3 +20,5 @@ ssm_get(){ aws ssm get-parameter --name "$1" --with-decryption --output text --q
 ssm_ls(){ aws ssm get-parameters-by-path --path "$1" --recursive | jq '.Parameters[].Name' -r; }
 
 psqll(){ psql "postgres://postgres:postgres@localhost:${1:-5432}/postgres"; }
+
+gi(){ git init "$1"; cd "$1" && echo node_modules/ > .gitignore; npm init -y; }

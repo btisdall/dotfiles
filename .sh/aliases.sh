@@ -12,9 +12,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 # npm
-
+alias nptnc='npm run test-no-compile'
+alias npcw='npm run compile -- --watch'
 alias ndbm='npm run db-migrate'
-alias ntq='npm run test-quick -- --watch'
+alias ntq='npm run test-quick'
 
 alias ks='kubectl sudo'
 
@@ -28,6 +29,7 @@ alias jmb='jira mkbranch'
 
 # VS Code
 alias co='code .'
+alias e='code .'
 alias ch='charm .'
 
 # Git - always
@@ -38,6 +40,8 @@ alias gl='git log'
 alias gcmp='gcm && ggpull'
 alias grbom='gfa && git rebase origin/master'
 alias gbdd='git br -D'
+alias gsc='git switch -c'
+alias gsm='git switch $(git_main_branch)'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then
@@ -56,7 +60,7 @@ fi
 
 # Docker
 alias di='docker images'
-alias dp='docker ps'
+alias dps='docker ps'
 alias dcu='docker-compose up -d'
 alias ddv='docker-compose down -v'
 

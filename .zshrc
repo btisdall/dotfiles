@@ -129,6 +129,7 @@ if type iterm2_tab_color >/dev/null; then
 }
 fi
 
+. /usr/local/opt/asdf/asdf.sh
 . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 disable -r time

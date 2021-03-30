@@ -12,6 +12,7 @@ def ec2p: {
   sshpub: "ssh://ec2-user@\(.PublicIpAddress)",
   stack: .Tags|from_entries["aws:cloudformation:stack-name"],
   asg: .Tags|from_entries["aws:autoscaling:groupName"],
+  type: .InstanceType,
   launch: .LaunchTime,
   state: .State.Name,
 };
