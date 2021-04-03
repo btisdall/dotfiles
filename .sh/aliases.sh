@@ -61,8 +61,8 @@ fi
 # Docker
 alias di='docker images'
 alias dps='docker ps'
-alias dcu='docker-compose up -d'
-alias ddv='docker-compose down -v'
+alias dcu='docker compose up -d'
+alias ddv='docker compose down -v'
 
 # Ruby
 alias pry='docker pull quay.io/btisdall/docker-pry && docker run --rm -ti quay.io/btisdall/docker-pry'
