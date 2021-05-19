@@ -50,8 +50,8 @@ DISABLE_MAGIC_FUNCTIONS=true
 
 ZSH_CUSTOM="${HOME}/.zsh/omz-custom"
 
-export GOPATH=${HOME}/go
-export PATH=${HOME}/local/bin:${GOPATH}/bin:/usr/local/bin:/usr/local/sbin:${PATH}:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+#export GOPATH=${HOME}/go
+#export PATH=${HOME}/local/bin:${GOPATH}/bin:/usr/local/bin:/usr/local/sbin:${PATH}:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 for i in "${HOME}/.zsh/preload/"* ; do
   __source "$i"
@@ -61,7 +61,7 @@ done
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bentis-git iterm2 docker)
+plugins=(git bentis-git iterm2 docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,3 +136,7 @@ disable -r time
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 nvm use
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/ben.tisdall/.sdkman"
+[[ -s "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh"

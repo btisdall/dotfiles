@@ -17,7 +17,7 @@ alias npcw='npm run compile -- --watch'
 alias ndbm='npm run db-migrate'
 alias ntq='npm run test-quick'
 
-alias ks='kubectl sudo'
+alias k='kubectl'
 
 # jq
 alias ec2p='jq ec2p'
@@ -80,6 +80,7 @@ alias diff='colordiff -u'
 alias vjson="vim -c 'set ft=json' -"
 alias c='clear'
 alias jks='bundle exec jekyll serve'
+alias isops='EDITOR="code --wait" sops'
 # shellcheck disable=SC2142
 alias gw='netstat -rn -f inet|grep default|awk "{print \$2}"'
 alias jv='json_verify <'

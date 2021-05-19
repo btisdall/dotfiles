@@ -33,3 +33,5 @@
 	required = true
 [include]
   path = ~/.git-local
+[init]
+	defaultBranch = main
