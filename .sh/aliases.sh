@@ -73,6 +73,7 @@ alias la='ls -a --color'
 alias ll='ls --color=auto -l'
 
 # Misc
+alias tf='terraform'
 alias cv='asdf current'
 alias mt='d=$(mktemp -d ~/me/delete-me-$(date +%FT%T)); cd $d && git init'
 alias bu='brew upgrade'

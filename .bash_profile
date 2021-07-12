@@ -53,3 +53,4 @@ unset __conda_setup
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/tisdabe/.sdkman"
 [[ -s "/Users/tisdabe/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tisdabe/.sdkman/bin/sdkman-init.sh"
+. "$HOME/.cargo/env"

@@ -20,3 +20,4 @@ fi
 [ -f ~/src/dotfiles/sh/aliases.sh ] && . ~/src/dotfiles/sh/aliases.sh
 [ -f ~/src/dotfiles/sh/functions.sh ] && . ~/src/dotfiles/sh/functions.sh
 [ -f ~/src/dotfiles/sh/exports.sh ] && . ~/src/dotfiles/sh/exports.sh
+. "$HOME/.cargo/env"
