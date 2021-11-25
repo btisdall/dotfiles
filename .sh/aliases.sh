@@ -38,10 +38,11 @@ alias gpo='git remote prune origin'
 alias gsh='git show HEAD'
 alias gl='git log'
 alias gcmp='gcm && ggpull'
-alias grbom='gfa && git rebase origin/master'
+alias grbom='gfa && git rebase origin/$(git_main_branch)'
 alias gbdd='git br -D'
 alias gsc='git switch -c'
 alias gsm='git switch $(git_main_branch)'
+alias gcz='npm run cz'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then
@@ -73,6 +74,7 @@ alias la='ls -a --color'
 alias ll='ls --color=auto -l'
 
 # Misc
+alias pbpaste='pbpaste|tr -d "\n"'
 alias tf='terraform'
 alias cv='asdf current'
 alias mt='d=$(mktemp -d ~/me/delete-me-$(date +%FT%T)); cd $d && git init'

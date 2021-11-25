@@ -138,6 +138,7 @@ export NVM_DIR="${HOME}/.nvm"
 nvm use
 
 export SPACESHIP_DOCKER_SHOW=false
+export SPACESHIP_RUBY_SHOW=false
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ben.tisdall/.sdkman"
