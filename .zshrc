@@ -129,8 +129,6 @@ if type iterm2_tab_color >/dev/null; then
 }
 fi
 
-. /usr/local/opt/asdf/asdf.sh
-
 disable -r time
 
 export NVM_DIR="${HOME}/.nvm"
@@ -141,12 +139,20 @@ export SPACESHIP_DOCKER_SHOW=false
 export SPACESHIP_RUBY_SHOW=false
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ben.tisdall/.sdkman"
-[[ -s "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/Users/ben.tisdall/.sdkman"
+#[[ -s "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh"
 
 # tabtab source for packages
 # uninstall by removing these lines
 #[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export JAVA_HOME="/usr/local/opt/openjdk@11"
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$JAVA_HOME"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

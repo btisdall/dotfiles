@@ -9,7 +9,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias sed='\gsed'
   alias mkramdisk='diskutil erasevolume HFS+ RAMDISK $(hdiutil attach -nomount ram://524288) && cd /Volumes/RAMDISK'
   alias ejramdisk='diskutil eject RAMDISK'
+  alias date='gdate'
 fi
+
+unalias diff
 
 # npm
 alias nptnc='npm run test-no-compile'
@@ -74,12 +77,13 @@ alias la='ls -a --color'
 alias ll='ls --color=auto -l'
 
 # Misc
+alias pp='pino-pretty -m message -S'
+alias pjq='pbpaste|jq'
 alias pbpaste='pbpaste|tr -d "\n"'
 alias tf='terraform'
 alias cv='asdf current'
 alias mt='d=$(mktemp -d ~/me/delete-me-$(date +%FT%T)); cd $d && git init'
 alias bu='brew upgrade'
-alias diff='colordiff -u'
 alias vjson="vim -c 'set ft=json' -"
 alias c='clear'
 alias jks='bundle exec jekyll serve'

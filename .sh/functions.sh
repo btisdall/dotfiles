@@ -13,12 +13,20 @@ kn(){ export KUBE_NAMESPACE="${1:-default}"; }
 knd(){ unset KUBE_NAMESPACE; }
 ggg(){
   git clone --recurse-submodules "$(pbpaste)"
-  cd "$(pbpaste|awk -F/ '{gsub("\.git$",""); print $NF}')"
+  cd "$(pbpaste|awk -F/ '{gsub("\\.git$",""); print $NF}')"
 }
 
 ssm_get(){ aws ssm get-parameter --name "$1" --with-decryption --output text --query Parameter.Value; }
 ssm_ls(){ aws ssm get-parameters-by-path --path "$1" --recursive | jq '.Parameters[].Name' -r; }
 
-psqll(){ psql "postgres://postgres:postgres@localhost:${1:-5432}/postgres"; }
+psqll(){ psql "postgres://postgres:postgres@localhost/postgres" "$@"; }
 
 gi(){ git init "$1"; cd "$1" && echo node_modules/ > .gitignore; npm init -y; }
+
+diff(){ \diff -u "$@" | diff-so-fancy; }
+
+oaToFc(){ jq --arg color ${1:-black} '.data|{type:"FeatureCollection",features:map({type:"Feature",geometry,properties:{stroke:$color,id}})}'; }
+anch() { awk '{print "#"tolower}' | sed 's/ /-/g'; }
+grp(){ grip "$1" & ; sleep 5 && open -a Safari.app http://localhost:6419/ ; wait; }
+ue() { node -e 'process.stdout.write(encodeURIComponent(process.argv[1]))' "$@"; }
+mbase(){ npm run test:base -- --fgrep "$@"; }
