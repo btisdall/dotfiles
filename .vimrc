@@ -70,5 +70,5 @@ if (empty($TMUX))
   endif
 endif
 
-colors badwolf
+colorscheme retrobox
 hi SpellBad cterm=underline

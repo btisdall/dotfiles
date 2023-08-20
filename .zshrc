@@ -9,7 +9,6 @@ autoload -U zmv
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -61,7 +60,7 @@ done
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git iterm2 docker kubectl)
+plugins=(git iterm2)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,22 +132,18 @@ disable -r time
 
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-nvm use
+#nvm use
 
 export SPACESHIP_DOCKER_SHOW=false
 export SPACESHIP_RUBY_SHOW=false
+export SPACESHIP_GIT_STATUS_SHOW=false
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/Users/ben.tisdall/.sdkman"
-#[[ -s "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ben.tisdall/.sdkman/bin/sdkman-init.sh"
-
-# tabtab source for packages
-# uninstall by removing these lines
-#[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export JAVA_HOME="/usr/local/opt/openjdk@11"
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:$ANDROID_HOME/tools"
 export PATH="$PATH:$ANDROID_HOME/tools/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
@@ -156,3 +151,5 @@ export PATH="$PATH:$JAVA_HOME"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+complete -C /opt/homebrew/bin/aws_completer aws

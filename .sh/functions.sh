@@ -16,14 +16,24 @@ ggg(){
   cd "$(pbpaste|awk -F/ '{gsub("\\.git$",""); print $NF}')"
 }
 
+bbb (){
+  local repo="$(pbpaste|awk '{print $NF}')"
+  git clone --recurse-submodules "${repo}"
+  cd "$(awk -F/ '{gsub("\\.git$",""); print $NF}' <<<"${repo}")"
+}
+
+getavails(){
+  export AWS_PROFILE=select-nonprod
+  local s3Url="$1"; shift
+  aws s3 cp "$(sed -e s!^https!s3! -e s!\.s3\.eu-west-1\.amazonaws\.com!! <<<"${s3Url}")" "$@"
+}
+tgrep(){ npm t -- --grep "$1"; }
 ssm_get(){ aws ssm get-parameter --name "$1" --with-decryption --output text --query Parameter.Value; }
 ssm_ls(){ aws ssm get-parameters-by-path --path "$1" --recursive | jq '.Parameters[].Name' -r; }
 
 psqll(){ psql "postgres://postgres:postgres@localhost/postgres" "$@"; }
 
 gi(){ git init "$1"; cd "$1" && echo node_modules/ > .gitignore; npm init -y; }
-
-diff(){ \diff -u "$@" | diff-so-fancy; }
 
 oaToFc(){ jq --arg color ${1:-black} '.data|{type:"FeatureCollection",features:map({type:"Feature",geometry,properties:{stroke:$color,id}})}'; }
 anch() { awk '{print "#"tolower}' | sed 's/ /-/g'; }

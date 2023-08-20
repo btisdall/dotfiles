@@ -12,8 +12,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   alias date='gdate'
 fi
 
-unalias diff
-
 # npm
 alias nptnc='npm run test-no-compile'
 alias npcw='npm run compile -- --watch'
