@@ -43,7 +43,7 @@ alias grbom='gfa && git rebase origin/$(git_main_branch)'
 alias gbdd='git br -D'
 alias gsc='git switch -c'
 alias gsm='git switch $(git_main_branch)'
-alias gcz='npm run cz'
+alias grbas='git rebase --autostash'
 
 # Git - only when not under zsh
 if [ -z "${ZSH_NAME}" ]; then
@@ -75,7 +75,7 @@ alias la='ls -a --color'
 alias ll='ls --color=auto -l'
 
 # Misc
-alias pp='pino-pretty -m message -S'
+alias pp='pino-pretty'
 alias pjq='pbpaste|jq'
 alias pbpaste='pbpaste|tr -d "\n"'
 alias tf='terraform'
