@@ -111,14 +111,14 @@ if type iterm2_tab_color >/dev/null; then
   source ${ZSH_CUSTOM}/iterm2-custom/colors.zsh
   precmd(){
     case "${AWS_PROFILE}" in
+      sandbox|playground|*nonprod*|*stage*)
+        _title green
+        ;;
       core|live|legacy|*prod*)
         _title red
         ;;
       prelive|*jump*|*share*|jrd)
         _title orange
-        ;;
-      sandbox|playground|*dev*|*stage*)
-        _title green
         ;;
       *)
         iterm2_tab_color_reset
@@ -132,18 +132,21 @@ disable -r time
 
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-#nvm use
+nvm use
 
 export SPACESHIP_DOCKER_SHOW=false
 export SPACESHIP_RUBY_SHOW=false
 export SPACESHIP_GIT_STATUS_SHOW=false
+export SPACESHIP_CONDA_SHOW=false
 
 source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export JAVA_HOME="/usr/local/opt/openjdk@11"
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
+if [[ "$(arch)" == "i386" ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+export PATH="$HOME/.tfenv/bin:$PATH"
 export PATH="$PATH:$ANDROID_HOME/tools"
 export PATH="$PATH:$ANDROID_HOME/tools/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
@@ -153,3 +156,32 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 complete -C /opt/homebrew/bin/aws_completer aws
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/Users/tisdabw1/.micromamba/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/Users/tisdabw1/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/tisdabw1/micromamba/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/tisdabw1/micromamba/etc/profile.d/conda.sh" ]; then
+        . "/Users/tisdabw1/micromamba/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/tisdabw1/micromamba/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
