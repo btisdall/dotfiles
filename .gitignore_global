@@ -1,6 +1,7 @@
 .vagrant
 *.swp
-.DS_Store*
+*.pem
+.DS_Store
 .svn/
 META.*
 MYMETA.*

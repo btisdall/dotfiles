@@ -49,7 +49,6 @@ DISABLE_MAGIC_FUNCTIONS=true
 
 ZSH_CUSTOM="${HOME}/.zsh/omz-custom"
 
-#export GOPATH=${HOME}/src
 export PATH="${HOME}/local/bin:${PATH}"
 
 for i in "${HOME}/.zsh/preload/"* ; do
@@ -130,10 +129,6 @@ fi
 
 disable -r time
 
-export NVM_DIR="${HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-nvm use
-
 export SPACESHIP_DOCKER_SHOW=false
 export SPACESHIP_RUBY_SHOW=false
 export SPACESHIP_GIT_STATUS_SHOW=false
@@ -141,13 +136,15 @@ export SPACESHIP_CONDA_SHOW=false
 
 source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
-if [[ "$(arch)" == "i386" ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-else
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use
+
 export PATH="$HOME/.tfenv/bin:$PATH"
-export PATH="$PATH:$ANDROID_HOME/tools"
+ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/tools/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$JAVA_HOME"

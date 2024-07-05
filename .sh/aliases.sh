@@ -34,6 +34,8 @@ alias e='code .'
 alias ch='charm .'
 
 # Git - always
+alias cb='git branch -D $(git branch|grep -Eiv "develop|test|main|keep|wip|old"); git fetch --all --prune --jobs=10'
+alias glom='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias gs='git status'
 alias gpo='git remote prune origin'
 alias gsh='git show HEAD'
